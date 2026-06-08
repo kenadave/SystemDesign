@@ -1,0 +1,5 @@
+1) File Deduplication: Before a file starts its upload sequence, send the local calculated hash checksum to the server. 
+If that specific signature matches an existing backend block, link the client's metadata directly to the current storage address without writing duplicate raw chunks.
+
+2) Database Sharding: Scale out metadata storage by horizontally partitioning records across database nodes 
+using owner_id as the primary shard key to ensure all user directories cluster closely together
